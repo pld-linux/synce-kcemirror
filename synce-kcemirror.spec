@@ -67,6 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
+install -D kcemirror.1 $RPM_BUILD_ROOT%{_mandir}/man1/kcemirror.1
+
 %find_lang kcemirror --with-kde
 
 %clean
@@ -76,5 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS LICENSE ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/kcemirror
+%{_mandir}/man1/kcemirror.1*
 %{_datadir}/apps/kcemirror
 %{_iconsdir}/hicolor/*/apps/kcemirror.png
