@@ -1,13 +1,13 @@
 Summary:	Windows CE remote control tool like VNC
 Summary(ru_RU.KOI8-R):Управление Windows CE в стиле VNC
 Summary(uk_UA.KOI8-U):Керування Windows CE у стил╕ VNC
-Name:		kcemirror
+Name:		synce-kcemirror
 Version:	0.1.5
 Release:	0.1
 License:	Freeware
 Group:		Networking
 URL:		http://synce.sourceforge.net/synce/kde/kcemirror.php
-Source0:	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/synce/kcemirror-%{version}.tar.gz
 # Source0-md5:	bcd19781a3215222d96300d1e26f0a36
 BuildRequires:	imake
 BuildRequires:	kdelibs-devel
@@ -44,10 +44,15 @@ KCeMirror нада╓ можлив╕сть ╕нтерактивно╖ вза╓мод╕╖ ╕з PocketPC.
 ввод за допомогою клав╕атури та миш╕ поверта╓ться до Windows CE.
 
 %prep
-%setup -q
+%setup -q -n kcemirror-%{version}
 
 %build
 %configure \
+%if "%{_lib}" == "lib64"
+	--enable-libsuffix=64 \
+%endif
+	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
+	--with-qt-libraries=%{_libdir} \
 	--enable-shared \
 	--disable-static \
 	--enable-final \
@@ -59,17 +64,17 @@ KCeMirror нада╓ можлив╕сть ╕нтерактивно╖ вза╓мод╕╖ ╕з PocketPC.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir=%{_kdedocdir}
 
-%find_lang %{name}
+%find_lang kcemirror --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files -f kcemirror.lang
 %defattr(644,root,root,755)
 %doc AUTHORS LICENSE ChangeLog NEWS README TODO
-%doc %_docdir/HTML/en/kcemirror/
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/apps/kcemirror/exe/screensnap.exe.*
+%attr(755,root,root) %{_bindir}/kcemirror
+%{_datadir}/apps/kcemirror
 %{_iconsdir}/hicolor/*/apps/kcemirror.png
