@@ -1,25 +1,26 @@
 Summary:	Windows CE remote control tool like VNC
-Summary(ru_RU.KOI8-R):Управление Windows CE в стиле VNC
-Summary(uk_UA.KOI8-U):Керування Windows CE у стил╕ VNC
+Summary(pl):	NarzЙdzie do sterowania Windows CE podobne do VNC
+Summary(ru):	Управление Windows CE в стиле VNC
+Summary(uk):	Керування Windows CE у стил╕ VNC
 Name:		synce-kcemirror
 Version:	0.1.5
 Release:	0.1
 License:	Freeware
 Group:		Networking
-URL:		http://synce.sourceforge.net/synce/kde/kcemirror.php
 Source0:	http://dl.sourceforge.net/synce/kcemirror-%{version}.tar.gz
 # Source0-md5:	bcd19781a3215222d96300d1e26f0a36
-BuildRequires:	imake
+URL:		http://synce.sourceforge.net/synce/kde/kcemirror.php
 BuildRequires:	kdelibs-devel
-#BuildRequires:	libXext-devel
-#BuildRequires:	libXt-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
+BuildRequires:	xorg-cf-files
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXt-devel
+BuildRequires:	xorg-util-imake
 #BuildRequires:	xml-utils
-#BuildRequires:	xorg-cf-files
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,16 +29,25 @@ desktop.
 
 The display of the Windows CE device is captured and transfered to the
 desktop where it gets displayed in a window. The user now can interact
-via this windows by using the mouse and the keyboard of the desktop.
+via this window by using the mouse and the keyboard of the desktop.
 
-%description -l ru_RU.KOI8-R
+%description -l pl
+KCeMirror udostЙpnia metodЙ wspСЁpracy z urz╠dzeniem PocketPC poprzez
+╤rodowisko graficzne.
+
+Ekran Windows CE jest przechwytywany i przesyЁany na komputer
+stacjonarny, gdzie jest wy╤wietlany w okienku. U©ytkownik mo©e
+wykonywaФ operacje poprzez to okienko przy u©yciu myszy i klawiatury
+komputera stacjonarnego.
+
+%description -l ru
 KCeMirror предоставляет способ интерактивного взаимодействия с
 PocketPC.
 
 Дисплей устройства захватывается и передается на ПК для отображения, а
 ввод с помощью клавиатуры и мыши возвращается Windows CE.
 
-%description -l uk_UA.KOI8-U
+%description -l uk
 KCeMirror нада╓ можлив╕сть ╕нтерактивно╖ вза╓мод╕╖ ╕з PocketPC.
 
 Д╕сплей пристрою захоплю╓ться ╕з передачею на ПК для в╕дображення, а
