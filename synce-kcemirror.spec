@@ -1,7 +1,7 @@
 Summary:	Windows CE remote control tool like VNC
-Summary(pl.UTF-8):   Narzędzie do sterowania Windows CE podobne do VNC
-Summary(ru.UTF-8):   Управление Windows CE в стиле VNC
-Summary(uk.UTF-8):   Керування Windows CE у стилі VNC
+Summary(pl.UTF-8):	Narzędzie do sterowania Windows CE podobne do VNC
+Summary(ru.UTF-8):	Управление Windows CE в стиле VNC
+Summary(uk.UTF-8):	Керування Windows CE у стилі VNC
 Name:		synce-kcemirror
 Version:	0.1.5
 Release:	0.1
