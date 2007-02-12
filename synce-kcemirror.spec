@@ -1,7 +1,7 @@
 Summary:	Windows CE remote control tool like VNC
-Summary(pl):	NarzЙdzie do sterowania Windows CE podobne do VNC
-Summary(ru):	Управление Windows CE в стиле VNC
-Summary(uk):	Керування Windows CE у стил╕ VNC
+Summary(pl.UTF-8):   Narzд≥dzie do sterowania Windows CE podobne do VNC
+Summary(ru.UTF-8):   пёп©я─п╟п╡п╩п╣п╫п╦п╣ Windows CE п╡ я│я┌п╦п╩п╣ VNC
+Summary(uk.UTF-8):   п п╣я─я┐п╡п╟п╫п╫я▐ Windows CE я┐ я│я┌п╦п╩я√ VNC
 Name:		synce-kcemirror
 Version:	0.1.5
 Release:	0.1
@@ -31,27 +31,27 @@ The display of the Windows CE device is captured and transfered to the
 desktop where it gets displayed in a window. The user now can interact
 via this window by using the mouse and the keyboard of the desktop.
 
-%description -l pl
-KCeMirror udostЙpnia metodЙ wspСЁpracy z urz╠dzeniem PocketPC poprzez
-╤rodowisko graficzne.
+%description -l pl.UTF-8
+KCeMirror udostд≥pnia metodд≥ wspцЁе┌pracy z urzд┘dzeniem PocketPC poprzez
+е⌡rodowisko graficzne.
 
-Ekran Windows CE jest przechwytywany i przesyЁany na komputer
-stacjonarny, gdzie jest wy╤wietlany w okienku. U©ytkownik mo©e
-wykonywaФ operacje poprzez to okienko przy u©yciu myszy i klawiatury
+Ekran Windows CE jest przechwytywany i przesyе┌any na komputer
+stacjonarny, gdzie jest wyе⌡wietlany w okienku. Uе╪ytkownik moе╪e
+wykonywaд┤ operacje poprzez to okienko przy uе╪yciu myszy i klawiatury
 komputera stacjonarnego.
 
-%description -l ru
-KCeMirror предоставляет способ интерактивного взаимодействия с
+%description -l ru.UTF-8
+KCeMirror п©я─п╣п╢п╬я│я┌п╟п╡п╩я▐п╣я┌ я│п©п╬я│п╬п╠ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╬пЁп╬ п╡п╥п╟п╦п╪п╬п╢п╣п╧я│я┌п╡п╦я▐ я│
 PocketPC.
 
-Дисплей устройства захватывается и передается на ПК для отображения, а
-ввод с помощью клавиатуры и мыши возвращается Windows CE.
+п■п╦я│п©п╩п╣п╧ я┐я│я┌я─п╬п╧я│я┌п╡п╟ п╥п╟я┘п╡п╟я┌я▀п╡п╟п╣я┌я│я▐ п╦ п©п╣я─п╣п╢п╟п╣я┌я│я▐ п╫п╟ п÷п  п╢п╩я▐ п╬я┌п╬п╠я─п╟п╤п╣п╫п╦я▐, п╟
+п╡п╡п╬п╢ я│ п©п╬п╪п╬я┴я▄я▌ п╨п╩п╟п╡п╦п╟я┌я┐я─я▀ п╦ п╪я▀я┬п╦ п╡п╬п╥п╡я─п╟я┴п╟п╣я┌я│я▐ Windows CE.
 
-%description -l uk
-KCeMirror нада╓ можлив╕сть ╕нтерактивно╖ вза╓мод╕╖ ╕з PocketPC.
+%description -l uk.UTF-8
+KCeMirror п╫п╟п╢п╟я■ п╪п╬п╤п╩п╦п╡я√я│я┌я▄ я√п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╬я≈ п╡п╥п╟я■п╪п╬п╢я√я≈ я√п╥ PocketPC.
 
-Д╕сплей пристрою захоплю╓ться ╕з передачею на ПК для в╕дображення, а
-ввод за допомогою клав╕атури та миш╕ поверта╓ться до Windows CE.
+п■я√я│п©п╩п╣п╧ п©я─п╦я│я┌я─п╬я▌ п╥п╟я┘п╬п©п╩я▌я■я┌я▄я│я▐ я√п╥ п©п╣я─п╣п╢п╟я┤п╣я▌ п╫п╟ п÷п  п╢п╩я▐ п╡я√п╢п╬п╠я─п╟п╤п╣п╫п╫я▐, п╟
+п╡п╡п╬п╢ п╥п╟ п╢п╬п©п╬п╪п╬пЁп╬я▌ п╨п╩п╟п╡я√п╟я┌я┐я─п╦ я┌п╟ п╪п╦я┬я√ п©п╬п╡п╣я─я┌п╟я■я┌я▄я│я▐ п╢п╬ Windows CE.
 
 %prep
 %setup -q -n kcemirror-%{version}
