@@ -65,7 +65,6 @@ KCeMirror надає можливість інтерактивної взаєм�
 	--with-qt-libraries=%{_libdir} \
 	--enable-shared \
 	--disable-static \
-	--enable-final \
 	--disable-rpath \
 	--with-pic
 
