@@ -1,26 +1,28 @@
+# TODO
+# - fails to build doc: "dtd/kdex.dtd" locate error, while package present:
+#   $ ql kde4-kdelibs|grep dtd/kdex.dtd
+#   /usr/share/apps/ksgmltools2/customization/dtd/kdex.dtd
 Summary:	Windows CE remote control tool like VNC
 Summary(pl.UTF-8):	Narzędzie do sterowania Windows CE podobne do VNC
 Summary(ru.UTF-8):	Управление Windows CE в стиле VNC
 Summary(uk.UTF-8):	Керування Windows CE у стилі VNC
 Name:		synce-kcemirror
-Version:	0.1.5
+Version:	0.1
 Release:	0.1
 License:	Freeware
 Group:		Networking
-Source0:	http://dl.sourceforge.net/synce/kcemirror-%{version}.tar.gz
-# Source0-md5:	bcd19781a3215222d96300d1e26f0a36
-URL:		http://synce.sourceforge.net/synce/kde/kcemirror.php
-BuildRequires:	kdelibs-devel
+Source0:	http://downloads.sourceforge.net/project/synce/SynCE-KCEMirror/0.2/kde4-kcemirror-%{version}.tar.gz
+# Source0-md5:	ed9a6c5fd014e53b9632889debdae345
+URL:		http://www.synce.org/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	qt-devel
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
+#BuildRequires:	xml-utils
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	xorg-util-imake
-#BuildRequires:	xml-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,29 +56,26 @@ KCeMirror надає можливість інтерактивної взаєм�
 ввод за допомогою клавіатури та миші повертається до Windows CE.
 
 %prep
-%setup -q -n kcemirror-%{version}
+%setup -q -n kde4-kcemirror-%{version}
 
 %build
-%configure \
+install -d build
+cd build
+%cmake .. \
+	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 %if "%{_lib}" == "lib64"
-	--enable-libsuffix=64 \
+	-DLIB_SUFFIX=64
 %endif
-	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-	--with-qt-libraries=%{_libdir} \
-	--enable-shared \
-	--disable-static \
-	--disable-rpath \
-	--with-pic
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+%{__make} -C build install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install -D kcemirror.1 $RPM_BUILD_ROOT%{_mandir}/man1/kcemirror.1
+install -Dp kcemirror.1 $RPM_BUILD_ROOT%{_mandir}/man1/kcemirror.1
 
 %find_lang kcemirror --with-kde
 
