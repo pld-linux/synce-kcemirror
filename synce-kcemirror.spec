@@ -1,28 +1,20 @@
-# TODO
-# - fails to build doc: "dtd/kdex.dtd" locate error, while package present:
-#   $ ql kde4-kdelibs|grep dtd/kdex.dtd
-#   /usr/share/apps/ksgmltools2/customization/dtd/kdex.dtd
 Summary:	Windows CE remote control tool like VNC
 Summary(pl.UTF-8):	Narzędzie do sterowania Windows CE podobne do VNC
 Summary(ru.UTF-8):	Управление Windows CE в стиле VNC
 Summary(uk.UTF-8):	Керування Windows CE у стилі VNC
 Name:		synce-kcemirror
-Version:	0.1
+Version:	0.2
 Release:	0.1
-License:	Freeware
-Group:		Networking
-Source0:	http://downloads.sourceforge.net/project/synce/SynCE-KCEMirror/0.2/kde4-kcemirror-%{version}.tar.gz
-# Source0-md5:	ed9a6c5fd014e53b9632889debdae345
+License:	MIT
+Group:		X11/Applications/Networking
+Source0:	http://downloads.sourceforge.net/synce/kde4-kcemirror-%{version}.tar.gz
+# Source0-md5:	177afafa0e1ec6b7f9e60b5d3514feb3
 URL:		http://www.synce.org/
-BuildRequires:	libjpeg-devel
+BuildRequires:	cmake >= 2.0
+BuildRequires:	kde4-kdelibs-devel >= 4
 BuildRequires:	libstdc++-devel
-BuildRequires:	synce-librapi2-devel
-BuildRequires:	synce-libsynce-devel
-#BuildRequires:	xml-utils
-BuildRequires:	xorg-cf-files
-BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXt-devel
-BuildRequires:	xorg-util-imake
+BuildRequires:	pkgconfig
+BuildRequires:	synce-core-lib-devel >= 0.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -84,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kcemirror.lang
 %defattr(644,root,root,755)
-%doc AUTHORS LICENSE ChangeLog NEWS README TODO
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/kcemirror
 %{_mandir}/man1/kcemirror.1*
 %{_datadir}/apps/kcemirror
